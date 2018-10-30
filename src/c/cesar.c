@@ -22,27 +22,32 @@
  *  SOFTWARE.
  */
 
-const CHARSET = "abcdefghijklmnopqrstuvwxyz";
+#include <stdio.h>
+#include <stdint.h>
+#include <input.h>
 
-/**
- * An implementation using a simple for loop
- * Note: The function doesn't check whether the provided string only contains chars from the charset
- * Different characters may produce unexpected results
- * @param {string} string
- * @param {Number} offset
- * @param {string} charset
- * @return {string}
- */
-export function cipher(string, offset, charset = CHARSET) {
-    let str = "";
-    for(let i = 0; i < string.length; i++) {
-        let c = string.charAt(i);
-        if(c.match(/\s/) !== null) {
-            str += c;
+uint16_t index(uint8_t *input, uint8_t c)
+{
+    for(int16_t i = 0; i < strlen(input); i++)
+    {
+        if(input[i] == c) {
+            return i;
+        }
+    }
+}
+
+void cypher(uint8_t *ptr, uint8_t *input,
+            int16_t offset, uint8_t *charset)
+{
+    uint16_t set_length = strlen(charset);
+    for(int16_t i = 0; i < strlen(input); i++)
+    {
+        if(input[i] == 0x20) {
+            ptr[i] = 0x20;
             continue;
         }
-        const index = charset.indexOf(c);
-        str += charset.charAt((index + offset + charset.length) % charset.length);
+        uint16_t j = index(charset, input[i]);
+        ptr[i] = charset[(j + offset + set_length) % set_length];
     }
-    return str;
+    ptr[strlen(input)] = 0;
 }

@@ -24,7 +24,7 @@
 
 import hljs from 'highlight.js';
 import $ from 'jquery';
-import {cipher} from "./_casar";
+import {cipher} from "./_cesar";
 
 hljs.initHighlightingOnLoad();
 

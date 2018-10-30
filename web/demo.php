@@ -50,7 +50,8 @@ require_once __DIR__ . "/../includes/Utils.php";
         <div class="col col-lg-6">
             <div class="form-group text-center">
                 <label for="code-input"><?php echo Utils::getString("demo_form_input") ?></label>
-                <textarea id="code-input" class="form-control" rows="8"><?php echo "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"?></textarea>
+                <textarea id="code-input" class="form-control"
+                          rows="8"><?php echo "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" ?></textarea>
             </div>
         </div>
         <div class="col col-lg-6">
@@ -87,15 +88,42 @@ require_once __DIR__ . "/../includes/Utils.php";
         </div>
     </div>
     <div class="row">
-        <div class="col">
-            <pre>
-                <code class="lang-javascript"><?php
-                    $file = file_get_contents(__DIR__ . "/../src/js/_casar.js");
-                    $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
-                    $no_jsdoc = preg_replace("/^\/\*\*[\s\S]*?\*\/\s+/m", "", $no_copyright);
-                    echo $no_jsdoc;
-                    ?></code>
-            </pre>
+        <div class="col col-12 col-lg-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h6>Javascript (ECMAScript 6)</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <pre>
+                        <code class="lang-javascript"><?php
+                            $file = file_get_contents(__DIR__ . "/../src/js/_cesar.js");
+                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+                            $no_jsdoc = preg_replace("/^\/\*\*[\s\S]*?\*\/\s+/m", "", $no_copyright);
+                            echo htmlspecialchars($no_jsdoc);
+                            ?></code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-lg-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h6>C (C11)</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <pre>
+                        <code class="cpp"><?php
+                            $file = file_get_contents(__DIR__ . "/../src/c/cesar.c");
+                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+                            echo htmlspecialchars($no_copyright);
+                            ?></code>
+                    </pre>
+                </div>
+            </div>
         </div>
     </div>
 </div>
