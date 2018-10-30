@@ -1,3 +1,8 @@
 {
-  "demo_title": "Demo"
+  "demo_title": "Demo",
+  "demo_title_long": "Demo - Szyfr Cezara",
+  "demo_form_input": "Wejście",
+  "demo_form_output": "Wyjście",
+  "demo_source_code": "Kod",
+  "demo_authors": "Anna Łukawska i Krzysztof Zdulski"
 }

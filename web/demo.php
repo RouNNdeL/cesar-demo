@@ -33,7 +33,7 @@ require_once __DIR__ . "/../includes/Utils.php";
     <title><?php echo Utils::getString("demo_title") ?></title>
     <link type="text/css" rel="stylesheet" href="/dist/vendor/css/vendor.min.css">
     <link type="text/css" rel="stylesheet" href="/dist/css/demo.min.css">
-    <link type="text/css" rel="stylesheet" href="/dist/css/highlight/default.css">
+    <link type="text/css" rel="stylesheet" href="/dist/css/highlight/monokai.css">
     <script src="/dist/vendor/js/vendor.js"></script>
     <script src="/dist/js/demo.min.js"></script>
 </head>
@@ -55,16 +55,28 @@ require_once __DIR__ . "/../includes/Utils.php";
         </div>
         <div class="col col-lg-6">
             <div class="form-group text-center">
-                <label for="code-input"><?php echo Utils::getString("demo_form_output") ?></label>
+                <label for="code-output"><?php echo Utils::getString("demo_form_output") ?></label>
                 <textarea id="code-output" class="form-control" rows="8"></textarea>
             </div>
         </div>
     </div>
     <div class="row">
-        <pre class="col"><code><?php
-                //TODO: Load code from file
-                echo "const example = \"test\"";
-                ?></code></pre>
+        <div class="col text-center">
+            <h5><?php echo Utils::getString("demo_source_code") ?></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <pre>
+                <code class="lang-javascript"><?php
+                    //TODO: Load code from file
+                    $file = file_get_contents(__DIR__ . "/../src/js/casar.js");
+                    $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+                    $no_jsdoc = preg_replace("/^\/\*\*[\s\S]*?\*\/\s+/m", "", $no_copyright);
+                    echo $no_jsdoc;
+                    ?></code>
+            </pre>
+        </div>
     </div>
 </div>
 
