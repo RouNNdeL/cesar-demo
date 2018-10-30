@@ -24,8 +24,11 @@
 
 const CHARSET = "abcdefghijklmnopqrstuvwxyz";
 
+/* About 1.6 times faster */
 /**
  * An implementation using a simple for loop
+ * Note: The function doesn't check whether the provided string only contains chars from the charset
+ * Different characters may produce unexpected results
  * @param {string} string
  * @param {Number} offset
  * @param {string} charset
@@ -42,6 +45,8 @@ export function cipher1(string, offset, charset = CHARSET) {
 
 /**
  * An implementation using Array.prototype.map()
+ * Note: The function doesn't check whether the provided string only contains chars from the charset
+ * Different characters may produce unexpected results
  * @param {string} string
  * @param {Number} offset
  * @param {string} charset

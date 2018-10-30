@@ -23,5 +23,23 @@
  */
 
 import hljs from 'highlight.js';
+import $ from 'jquery';
+import {cipher1} from "./_casar";
 
 hljs.initHighlightingOnLoad();
+
+$(function() {
+    const offset = 3;
+    const charset = "abcdefghijklmnopqrstuvwxyz";
+
+    const input = $("#code-input");
+    const output = $("#code-output");
+    input.on("input", function() {
+        $(this).val($(this).val().replace(new RegExp(`[^${charset}]`, "g"), ""));
+        output.val(cipher1($(this).val(), offset, charset));
+    });
+    output.on("input", function() {
+        $(this).val($(this).val().replace(new RegExp(`[^${charset}]`, "g"), ""));
+        input.val(cipher1($(this).val(), -offset));
+    });
+});

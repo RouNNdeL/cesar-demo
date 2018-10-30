@@ -69,8 +69,7 @@ require_once __DIR__ . "/../includes/Utils.php";
         <div class="col">
             <pre>
                 <code class="lang-javascript"><?php
-                    //TODO: Load code from file
-                    $file = file_get_contents(__DIR__ . "/../src/js/casar.js");
+                    $file = file_get_contents(__DIR__ . "/../src/js/_casar.js");
                     $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
                     $no_jsdoc = preg_replace("/^\/\*\*[\s\S]*?\*\/\s+/m", "", $no_copyright);
                     echo $no_jsdoc;
