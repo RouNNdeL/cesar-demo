@@ -39,7 +39,7 @@ require_once __DIR__ . "/../includes/Utils.php";
 </head>
 <body>
 
-<div class="container">
+<div class="container mt-3">
     <div class="row">
         <div class="col text-center">
             <h3><?php echo Utils::getString("demo_title_long") ?></h3>
@@ -50,7 +50,7 @@ require_once __DIR__ . "/../includes/Utils.php";
         <div class="col col-lg-6">
             <div class="form-group text-center">
                 <label for="code-input"><?php echo Utils::getString("demo_form_input") ?></label>
-                <textarea id="code-input" class="form-control" rows="8"></textarea>
+                <textarea id="code-input" class="form-control" rows="8"><?php echo "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"?></textarea>
             </div>
         </div>
         <div class="col col-lg-6">
@@ -61,6 +61,27 @@ require_once __DIR__ . "/../includes/Utils.php";
         </div>
     </div>
     <div class="row">
+        <div class="col text-center">
+            <h5><?php echo Utils::getString("demo_options") ?></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-6 col-lg-3">
+            <label for="code-offset"><?php echo Utils::getString("demo_form_offset") ?></label>
+            <input id="code-offset" class="form-control" type="number" min="0"
+                   value="<?php try {
+                       echo random_int(1, 10);
+                   }
+                   catch(Exception $e) {
+                       echo 1;
+                   } ?>">
+        </div>
+        <div class="col col-6 col-lg-9">
+            <label for="code-charset"><?php echo Utils::getString("demo_form_charset") ?></label>
+            <input id="code-charset" class="form-control" type="text" value="abcdefghijklmnopqrstuvwxyz">
+        </div>
+    </div>
+    <div class="row mt-3">
         <div class="col text-center">
             <h5><?php echo Utils::getString("demo_source_code") ?></h5>
         </div>

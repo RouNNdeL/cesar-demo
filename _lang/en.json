@@ -3,6 +3,8 @@
   "demo_title_long": "Cesar's cipher demo",
   "demo_form_input": "Input",
   "demo_form_output": "Output",
+  "demo_form_offset": "Offset",
+  "demo_form_charset": "Character set",
   "demo_source_code": "Source code",
   "demo_authors": "Anna Łukawska & Krzysztof Zdulski"
 }

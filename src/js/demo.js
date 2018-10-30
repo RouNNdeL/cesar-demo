@@ -24,22 +24,44 @@
 
 import hljs from 'highlight.js';
 import $ from 'jquery';
-import {cipher1} from "./_casar";
+import {cipher} from "./_casar";
 
 hljs.initHighlightingOnLoad();
 
 $(function() {
-    const offset = 3;
-    const charset = "abcdefghijklmnopqrstuvwxyz";
-
+    const offset = $("#code-offset");
+    const charset = $("#code-charset");
     const input = $("#code-input");
     const output = $("#code-output");
-    input.on("input", function() {
-        $(this).val($(this).val().replace(new RegExp(`[^${charset}]`, "g"), ""));
-        output.val(cipher1($(this).val(), offset, charset));
-    });
+
+    let offset_val = offset.val();
+    let charset_val = charset.val();
+
+    function refreshOutput() {
+        input.val(input.val().replace(new RegExp(`[^${charset_val}\\s]`, "g"), ""));
+        output.val(cipher(input.val(), offset_val, charset_val));
+    }
+
+    refreshOutput();
+
+    input.on("input", refreshOutput);
+
     output.on("input", function() {
-        $(this).val($(this).val().replace(new RegExp(`[^${charset}]`, "g"), ""));
-        input.val(cipher1($(this).val(), -offset));
+        $(this).val($(this).val().replace(new RegExp(`[^${charset_val}\\s]`, "g"), ""));
+        input.val(cipher($(this).val(), -offset_val));
+    });
+
+    offset.on("input", function() {
+        const val = Math.max(parseInt($(this).val().replace(/[^\d]/, "")), 0);
+        $(this).val(val);
+        if(!isNaN(val)) {
+            offset_val = val;
+            refreshOutput();
+        }
+    });
+
+    charset.change(function() {
+        charset_val = $(this).val();
+        refreshOutput();
     });
 });
