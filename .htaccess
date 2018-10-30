@@ -1,0 +1,7 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+RewriteRule ^((?!dist).)*$ web/demo.php [END]
+RewriteRule ^$ web/demo.html [END]
