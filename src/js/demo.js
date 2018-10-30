@@ -61,7 +61,10 @@ $(function() {
     });
 
     charset.change(function() {
-        charset_val = $(this).val();
+        charset_val = $(this).val().split("").filter(function(item, i, allItems) {
+            return i === allItems.indexOf(item);
+        }).join("");
+        $(this).val(charset_val);
         refreshOutput();
     });
 });
