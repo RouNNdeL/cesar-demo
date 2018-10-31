@@ -2,7 +2,7 @@ import re
 
 def cipher(inpt, offset, charset):
     str = ""
-    for(c in inpt):
+    for c in inpt:
         if re.match(r".*\s.*", c):
             str += c
             continue
