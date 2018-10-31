@@ -20,11 +20,11 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-$flag-height: 30px;
-$flag-height-footer: 20px;
-$flag-border-color: rgba(0, 0, 0, 0.5);
+$flag-height: 35px;
+$flag-height-footer: 25px;
+$flag-border-color: rgba(0, 0, 0, .5);
 
-$social-icon-height: 20px;
+$social-icon-height: 25px;
 
 code {
   &.source {
@@ -37,6 +37,7 @@ code {
   width: auto;
   border: 1px solid $flag-border-color;
   cursor: pointer;
+
   &.footer {
     height: $flag-height-footer;
   }
