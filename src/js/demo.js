@@ -39,7 +39,7 @@ $(function() {
 
     function refreshOutput() {
         input.val(input.val().replace(new RegExp(`[^${charset_val}\\s]`, "g"), ""));
-        output.val(cipher(input.val(), offset_val, charset_val));
+        output.val(cipher(input.val(), offset_val % charset_val.length, charset_val));
     }
 
     refreshOutput();
