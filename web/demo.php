@@ -109,11 +109,11 @@ require_once __DIR__ . "/../includes/Utils.php";
             </div>
         </div>
         <?php
-        $extensions = ["c", "java", "kt", "py", "php", "bat"];
-        $names = ["C (C11)", "Java (JDK 9)", "Kotlin (1.3)", "Python (2.7)", "PHP (7.0.3)", "Batch Script (DOS)"];
-        $lang = ["cpp", "java", "kotlin", "python", "php", "dos"];
+        $extensions = ["c", "java", "kt", "py", "php", "sh", "bat"];
+        $names = ["C (C11)", "Java (JDK 9)", "Kotlin (1.3)", "Python (2.7)", "PHP (7.0.3)", "Bash (4.4.12)", "Batch/DOS (Windows 7)"];
+        $lang = ["cpp", "java", "kotlin", "python", "php", "bash", "dos"];
         foreach($extensions as $i => $extension) {
-            $file = file_get_contents(__DIR__ . "/../examples/cesar.".$extension);
+            $file = file_get_contents(__DIR__ . "/../examples/cesar." . $extension);
             $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
             $code = htmlspecialchars($no_copyright);
 
