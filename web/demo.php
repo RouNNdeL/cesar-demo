@@ -109,9 +109,9 @@ require_once __DIR__ . "/../includes/Utils.php";
             </div>
         </div>
         <?php
-        $extensions = ["c", "java", "kt", "py", "php"];
-        $names = ["C (C11)", "Java (JDK 9)", "Kotlin (1.3)", "Python (2.7)", "PHP (7.0.3)"];
-        $lang = ["cpp", "java", "kotlin", "python", "php"];
+        $extensions = ["c", "java", "kt", "py", "php", "bat"];
+        $names = ["C (C11)", "Java (JDK 9)", "Kotlin (1.3)", "Python (2.7)", "PHP (7.0.3)", "Batch Script (DOS)"];
+        $lang = ["cpp", "java", "kotlin", "python", "php", "dos"];
         foreach($extensions as $i => $extension) {
             $file = file_get_contents(__DIR__ . "/../examples/cesar.".$extension);
             $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
