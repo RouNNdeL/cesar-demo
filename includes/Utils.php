@@ -60,6 +60,7 @@ class Utils
         $file = file_get_contents($path);
         if($file == false)
         {
+            unset($_COOKIE["lang"]);
             $this->lang = self::DEFAULT_LANG;
             $this->loadStrings();
             return;

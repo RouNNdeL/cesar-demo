@@ -43,7 +43,7 @@ require_once __DIR__ . "/../includes/Utils.php";
 if(!isset($_COOKIE["lang"])) {
     echo <<<HTML
 <div id="lang-modal" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Please select your language</h5>
