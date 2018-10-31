@@ -75,7 +75,10 @@ $(function() {
     lang_modal.modal();
     lang_modal.modal("show");
     $(".flag").click(function() {
-        setCookie("lang", $(this).data("lang-id"), 90);
-        document.location.reload();
+        const lang = $(this).data("lang-id");
+        const loaded_lang = $("html").attr("lang");
+        setCookie("lang", lang, 90);
+        if(lang !== loaded_lang) document.location.reload();
+        else lang_modal.modal("hide");
     });
 });
