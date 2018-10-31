@@ -169,8 +169,8 @@ HTML;
         ?>
     </div>
 
-    <footer class="bg-light fixed-bottom">
-        <div class="row p-3">
+    <footer class="bg-secondary text-white fixed-bottom">
+        <div class="row px-3 py-2">
             <div class="col col-auto">
                 <a href="https://github.com/RouNNdeL/cesar-demo"><img src="/github.png" class="social"></a>
             </div>
