@@ -170,12 +170,14 @@ HTML;
     </div>
 
     <footer class="bg-light fixed-bottom">
-        <div class="row p-3 justify-content-center">
+        <div class="row p-3">
             <div class="col col-auto">
-                © 2018 Copyright
-                <a href="https://github.com/RouNNdeL">Krzysztof "RouNdeL" Zdulski</a>
+                <a href="https://github.com/RouNNdeL/cesar-demo"><img src="/github.png" class="social"></a>
             </div>
-            <div class="col col-auto ml-auto">
+            <div class="col text-center d-none d-md-block">
+                Copyright © 2018 Krzysztof "RouNdeL" Zdulski
+            </div>
+            <div class="col col-auto ml-auto ml-md-0">
                 <div class="row pr-2">
                     <div class="col col-auto text-center px-1">
                         <img class="flag footer" src="/gb.png" data-lang-id="en">

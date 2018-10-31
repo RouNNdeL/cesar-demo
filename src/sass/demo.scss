@@ -24,6 +24,8 @@ $flag-height: 30px;
 $flag-height-footer: 20px;
 $flag-border-color: rgba(0, 0, 0, 0.5);
 
+$social-icon-height: 20px;
+
 code {
   &.source {
     width: 100%;
@@ -38,4 +40,10 @@ code {
   &.footer {
     height: $flag-height-footer;
   }
+}
+
+.social {
+  height: $social-icon-height;
+  width: auto;
+  cursor: pointer;
 }
