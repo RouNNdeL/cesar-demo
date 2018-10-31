@@ -11,6 +11,3 @@ def cipher(inpt, offset, charset):
     return str
 
 
-
-
-

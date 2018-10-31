@@ -13,5 +13,3 @@ fun cesar(input: String, offset: Int, charset: String): String {
     }
     return str.toString()
 }
-
-

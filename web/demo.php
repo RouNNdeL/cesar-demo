@@ -89,16 +89,16 @@ require_once __DIR__ . "/../includes/Utils.php";
         </div>
     </div>
     <div class="row">
-        <div class="col col-12 col-lg-6">
+        <div class="col col-12 col-lg-6 d-flex flex-column mt-3">
             <div class="row">
                 <div class="col text-center">
                     <h6>Javascript (ECMAScript 6)</h6>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <pre>
-                        <code class="lang-javascript"><?php
+            <div class="row flex-grow-1">
+                <div class="col d-flex flex-column">
+                    <pre class="d-flex flex-grow-1">
+                        <code class="source lang-javascript"><?php
                             $file = file_get_contents(__DIR__ . "/../src/js/_cesar.js");
                             $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
                             $no_jsdoc = preg_replace("/^\/\*\*[\s\S]*?\*\/\s+/m", "", $no_copyright);
@@ -118,16 +118,16 @@ require_once __DIR__ . "/../includes/Utils.php";
             $code = htmlspecialchars($no_copyright);
 
             echo <<<HTML
-        <div class="col col-12 col-lg-6">
+        <div class="col col-12 col-lg-6 d-flex flex-column mt-3">
             <div class="row">
                 <div class="col text-center">
                     <h6>$names[$i]</h6>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <pre>
-                        <code class="$lang[$i]">$code</code>
+            <div class="row flex-grow-1">
+                <div class="col d-flex flex-column">
+                    <pre class="d-flex flex-grow-1">
+                        <code class="source $lang[$i]">$code</code>
                     </pre>
                 </div>
             </div>
