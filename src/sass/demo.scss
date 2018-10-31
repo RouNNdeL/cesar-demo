@@ -21,6 +21,7 @@
 //  SOFTWARE.
 
 $flag-height: 30px;
+$flag-height-footer: 20px;
 $flag-border-color: rgba(0, 0, 0, 0.5);
 
 code {
@@ -34,4 +35,7 @@ code {
   width: auto;
   border: 1px solid $flag-border-color;
   cursor: pointer;
+  &.footer {
+    height: $flag-height-footer;
+  }
 }
