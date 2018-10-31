@@ -30,6 +30,7 @@ require_once __DIR__ . "/../includes/Utils.php";
 <html lang="<?php echo Utils::getLang() ?>">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo Utils::getString("demo_title") ?></title>
     <link type="text/css" rel="stylesheet" href="/dist/vendor/css/vendor.min.css">
     <link type="text/css" rel="stylesheet" href="/dist/css/demo.min.css">
@@ -47,14 +48,14 @@ require_once __DIR__ . "/../includes/Utils.php";
         </div>
     </div>
     <div class="row">
-        <div class="col col-lg-6">
+        <div class="col col-lg-6 pr-1">
             <div class="form-group text-center">
                 <label for="code-input"><?php echo Utils::getString("demo_form_input") ?></label>
                 <textarea id="code-input" class="form-control"
                           rows="8"><?php echo "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua" ?></textarea>
             </div>
         </div>
-        <div class="col col-lg-6">
+        <div class="col col-lg-6 pl-1">
             <div class="form-group text-center">
                 <label for="code-output"><?php echo Utils::getString("demo_form_output") ?></label>
                 <textarea id="code-output" class="form-control" rows="8"></textarea>
@@ -67,7 +68,7 @@ require_once __DIR__ . "/../includes/Utils.php";
         </div>
     </div>
     <div class="row">
-        <div class="col col-6 col-lg-3">
+        <div class="col col-6 col-lg-3 pr-1">
             <label for="code-offset"><?php echo Utils::getString("demo_form_offset") ?></label>
             <input id="code-offset" class="form-control" type="number" min="0"
                    value="<?php try {
@@ -77,7 +78,7 @@ require_once __DIR__ . "/../includes/Utils.php";
                        echo 1;
                    } ?>">
         </div>
-        <div class="col col-6 col-lg-9">
+        <div class="col col-6 col-lg-9 pl-1">
             <label for="code-charset"><?php echo Utils::getString("demo_form_charset") ?></label>
             <input id="code-charset" class="form-control" type="text" value="abcdefghijklmnopqrstuvwxyz">
         </div>
