@@ -1,5 +1,10 @@
 @ECHO OFF
 
+CALL :cipher out "examplestring" 5 "abcdefghijklmnopqrstuvwxyz"
+
+echo %out%
+EXIT /B 0
+
 :index <string> <char> <resultVar>
     SET tmp=%~1%strterm%
     SET i=0
