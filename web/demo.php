@@ -108,97 +108,35 @@ require_once __DIR__ . "/../includes/Utils.php";
                 </div>
             </div>
         </div>
+        <?php
+        $extensions = ["c", "java", "kt", "py", "php"];
+        $names = ["C (C11)", "Java (JDK 9)", "Kotlin (1.3)", "Python (2.7)", "PHP (7.0.3)"];
+        $lang = ["cpp", "java", "kotlin", "python", "php"];
+        foreach($extensions as $i => $extension) {
+            $file = file_get_contents(__DIR__ . "/../examples/cesar.".$extension);
+            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+            $code = htmlspecialchars($no_copyright);
+
+            echo <<<HTML
         <div class="col col-12 col-lg-6">
             <div class="row">
                 <div class="col text-center">
-                    <h6>C (C11)</h6>
+                    <h6>$names[$i]</h6>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <pre>
-                        <code class="cpp"><?php
-                            $file = file_get_contents(__DIR__ . "/../examples/cesar.c");
-                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
-                            echo htmlspecialchars($no_copyright);
-                            ?></code>
+                        <code class="$lang[$i]">$code</code>
                     </pre>
                 </div>
             </div>
         </div>
-        <div class="col col-12 col-lg-6">
-            <div class="row">
-                <div class="col text-center">
-                    <h6>Java (JDK 9)</h6>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <pre>
-                        <code class="java"><?php
-                            $file = file_get_contents(__DIR__ . "/../examples/cesar.java");
-                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
-                            echo htmlspecialchars($no_copyright);
-                            ?></code>
-                    </pre>
-                </div>
-            </div>
-        </div>
-        <div class="col col-12 col-lg-6">
-            <div class="row">
-                <div class="col text-center">
-                    <h6>Kotlin (1.3)</h6>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <pre>
-                        <code class="kotlin"><?php
-                            $file = file_get_contents(__DIR__ . "/../examples/cesar.kt");
-                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
-                            echo htmlspecialchars($no_copyright);
-                            ?></code>
-                    </pre>
-                </div>
-            </div>
-        </div>
-        <div class="col col-12 col-lg-6">
-            <div class="row">
-                <div class="col text-center">
-                    <h6>Python (2.7)</h6>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <pre>
-                        <code class="python"><?php
-                            $file = file_get_contents(__DIR__ . "/../examples/cesar.py");
-                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
-                            echo htmlspecialchars($no_copyright);
-                            ?></code>
-                    </pre>
-                </div>
-            </div>
-        </div>
-        <div class="col col-12 col-lg-6">
-            <div class="row">
-                <div class="col text-center">
-                    <h6>PHP (7.3)</h6>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <pre>
-                        <code class="php"><?php
-                            $file = file_get_contents(__DIR__ . "/../examples/cesar.php");
-                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
-                            echo htmlspecialchars($no_copyright);
-                            ?></code>
-                    </pre>
-                </div>
-            </div>
+HTML;
+
+        }
+        ?>
     </div>
-</div>
 
 </body>
 </html>
