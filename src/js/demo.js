@@ -23,8 +23,11 @@
  */
 
 import hljs from 'highlight.js';
+import "tether";
+import "bootstrap";
 import $ from 'jquery';
 import {cipher} from "./_cesar";
+import {setCookie} from "./_utils";
 
 hljs.initHighlightingOnLoad();
 
@@ -66,5 +69,13 @@ $(function() {
         }).join("");
         $(this).val(charset_val);
         refreshOutput();
+    });
+
+    const lang_modal = $("#lang-modal");
+    lang_modal.modal();
+    lang_modal.modal("show");
+    $(".flag").click(function() {
+        setCookie("lang", $(this).data("lang-id"), 90);
+        document.location.reload();
     });
 });

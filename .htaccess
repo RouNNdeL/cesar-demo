@@ -3,5 +3,6 @@ RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
-RewriteRule ^((?!dist).)*$ web/demo.php [END]
-RewriteRule ^$ web/demo.html [END]
+RewriteRule ^(?!web/)(.*?\.(png|jpeg|jpg|svg))$ web/resources/$1 [L]
+
+RewriteRule ^((?!(dist|web)).)*$ web/demo.php [END]

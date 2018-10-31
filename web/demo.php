@@ -39,6 +39,37 @@ require_once __DIR__ . "/../includes/Utils.php";
     <script src="/dist/js/demo.min.js"></script>
 </head>
 <body>
+<?php
+if(!isset($_COOKIE["lang"])) {
+    echo <<<HTML
+<div id="lang-modal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Please select your language</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row justify-content-center">
+          <div class="col col-auto text-center">
+            <img class="flag" src="/gb.png" data-lang-id="en">
+            <p class="mb-0" >English</p>
+          </div>
+          <div class="col col-auto text-center">
+            <img class="flag" src="/pl.png" data-lang-id="pl">
+            <p class="mb-0">Polski</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+HTML;
+
+}
+?>
 
 <div class="container mt-3">
     <div class="row">
