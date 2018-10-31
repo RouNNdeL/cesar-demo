@@ -34,6 +34,7 @@ uint16_t index(uint8_t *input, uint8_t c)
             return i;
         }
     }
+    return -1;
 }
 
 void cypher(uint8_t *ptr, uint8_t *input,

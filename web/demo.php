@@ -42,7 +42,7 @@ require_once __DIR__ . "/../includes/Utils.php";
 <div class="container mt-3">
     <div class="row">
         <div class="col text-center">
-            <h3><?php echo Utils::getString("demo_title_long") ?></h3>
+            <h3><?php echo Utils::getString("demo_title_long") ?> </h3>
             <p><?php echo Utils::getString("demo_authors") ?></p>
         </div>
     </div>
@@ -117,7 +117,7 @@ require_once __DIR__ . "/../includes/Utils.php";
                 <div class="col">
                     <pre>
                         <code class="cpp"><?php
-                            $file = file_get_contents(__DIR__ . "/../src/c/cesar.c");
+                            $file = file_get_contents(__DIR__ . "/../examples/cesar.c");
                             $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
                             echo htmlspecialchars($no_copyright);
                             ?></code>
@@ -125,6 +125,77 @@ require_once __DIR__ . "/../includes/Utils.php";
                 </div>
             </div>
         </div>
+        <div class="col col-12 col-lg-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h6>Java (JDK 9)</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <pre>
+                        <code class="java"><?php
+                            $file = file_get_contents(__DIR__ . "/../examples/cesar.java");
+                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+                            echo htmlspecialchars($no_copyright);
+                            ?></code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-lg-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h6>Kotlin (1.3)</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <pre>
+                        <code class="kotlin"><?php
+                            $file = file_get_contents(__DIR__ . "/../examples/cesar.kt");
+                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+                            echo htmlspecialchars($no_copyright);
+                            ?></code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-lg-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h6>Python (2.7)</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <pre>
+                        <code class="python"><?php
+                            $file = file_get_contents(__DIR__ . "/../examples/cesar.py");
+                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+                            echo htmlspecialchars($no_copyright);
+                            ?></code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 col-lg-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h6>PHP (7.3)</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <pre>
+                        <code class="php"><?php
+                            $file = file_get_contents(__DIR__ . "/../examples/cesar.php");
+                            $no_copyright = preg_replace("/^\/\*[\s\S]*?\*\/\s+/m", "", $file, 1);
+                            echo htmlspecialchars($no_copyright);
+                            ?></code>
+                    </pre>
+                </div>
+            </div>
     </div>
 </div>
 
