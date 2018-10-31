@@ -41,8 +41,19 @@ require_once __DIR__ . "/../includes/Utils.php";
 <body>
 <?php
 if(!isset($_COOKIE["lang"])) {
+    $flags = "";
+    foreach(Utils::AVAILABLE_LANGUAGES as $i => $lang) {
+        $name = Utils::LANGUAGE_NATIVE_NAMES[$i];
+        $flags .= <<<HTML
+        <div class="col col-auto text-center">
+            <img class="flag" src="/$lang.png" data-lang-id="$lang">
+            <p class="mb-0">$name</p>
+        </div>
+HTML;
+
+    }
     echo <<<HTML
-<div id="lang-modal" class="modal" tabindex="-1" role="dialog">
+<div id="lang-modal" class="modal fade" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -53,14 +64,7 @@ if(!isset($_COOKIE["lang"])) {
       </div>
       <div class="modal-body">
         <div class="row justify-content-center">
-          <div class="col col-auto text-center">
-            <img class="flag" src="/gb.png" data-lang-id="en">
-            <p class="mb-0" >English</p>
-          </div>
-          <div class="col col-auto text-center">
-            <img class="flag" src="/pl.png" data-lang-id="pl">
-            <p class="mb-0">Polski</p>
-          </div>
+          $flags
         </div>
       </div>
     </div>
@@ -179,12 +183,16 @@ HTML;
             </div>
             <div class="col col-auto ml-auto ml-md-0">
                 <div class="row pr-2">
+                    <?php
+                    foreach(Utils::AVAILABLE_LANGUAGES as $lang) {
+                        echo  <<<HTML
                     <div class="col col-auto text-center px-1">
-                        <img class="flag footer" src="/gb.png" data-lang-id="en">
+                        <img class="flag footer" src="/$lang.png" data-lang-id="$lang">
                     </div>
-                    <div class="col col-auto text-center px-1">
-                        <img class="flag footer" src="/pl.png" data-lang-id="pl">
-                    </div>
+HTML;
+
+                    }
+                    ?>
                 </div>
             </div>
         </div>
