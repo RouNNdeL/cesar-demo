@@ -75,7 +75,7 @@ HTML;
 }
 ?>
 
-<div class="container mt-3">
+<div class="container mt-3 mb-5">
     <div class="row">
         <div class="col text-center">
             <h3><?php echo Utils::getString("demo_title_long") ?> </h3>
