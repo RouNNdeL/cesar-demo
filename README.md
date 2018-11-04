@@ -6,3 +6,6 @@ The project contains examples of implementing the algorithm in different program
 
 # Clone and build
 To mess with the page on your own you need to clone it by running `git clone https://github.com/RouNNdeL/cesar-demo/` and then run `npm i` to install all the dependencies. Since the repo only contains source files, which are not enough to run the webpage you need to build it. Run `grunt vendor` in the project's root directory to build the vendor bundles and then `grunt` to build the actual sources. All build files are put in to the `dist` directory.
+
+# Test
+The project includes tests for the cipher function. You can run them with `npm test`

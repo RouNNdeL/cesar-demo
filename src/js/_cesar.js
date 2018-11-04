@@ -22,7 +22,7 @@
  *  SOFTWARE.
  */
 
-const CHARSET = "abcdefghijklmnopqrstuvwxyz";
+export const CHARSET = "abcdefghijklmnopqrstuvwxyz";
 
 /**
  * An implementation using a simple for loop

@@ -1,6 +1,7 @@
 {
   "only": [
-    "src/*"
+    "src/*",
+    "test/*"
   ],
   "presets": [
     "@babel/preset-env"
