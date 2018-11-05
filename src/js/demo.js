@@ -36,6 +36,7 @@ $(function() {
     const charset = $("#code-charset");
     const input = $("#code-input");
     const output = $("#code-output");
+    const loaded_lang = $("html").attr("lang");
 
     let offset_val = offset.val();
     let charset_val = charset.val();
@@ -76,7 +77,6 @@ $(function() {
     lang_modal.modal("show");
     $(".flag").click(function() {
         const lang = $(this).data("lang-id");
-        const loaded_lang = $("html").attr("lang");
         setCookie("lang", lang, 90);
         if(lang !== loaded_lang) document.location.reload();
         else lang_modal.modal("hide");
