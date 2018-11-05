@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/RouNNdeL/cesar-demo.svg?branch=master)](https://travis-ci.org/RouNNdeL/cesar-demo) [![dependencies Status](https://david-dm.org/RouNNdeL/cesar-demo/status.svg)](https://david-dm.org/RouNNdeL/cesar-demo) [![devDependencies Status](https://david-dm.org/RouNNdeL/cesar-demo/dev-status.svg)](https://david-dm.org/RouNNdeL/cesar-demo?type=dev)
+[![Build Status](https://travis-ci.org/RouNNdeL/cesar-demo.svg?branch=master)](https://travis-ci.org/RouNNdeL/cesar-demo) [![Known Vulnerabilities](https://snyk.io/test/github/RouNNdeL/cesar-demo/badge.svg)](https://snyk.io/test/github/RouNNdeL/cesar-demo) [![dependencies Status](https://david-dm.org/RouNNdeL/cesar-demo/status.svg)](https://david-dm.org/RouNNdeL/cesar-demo) [![devDependencies Status](https://david-dm.org/RouNNdeL/cesar-demo/dev-status.svg)](https://david-dm.org/RouNNdeL/cesar-demo?type=dev)
 # Introduction 
 This is a demo for my IT class talk regarding the Cesar's Cipher. It can be previewed [here](https://demo.zdul.xyz/).
 
