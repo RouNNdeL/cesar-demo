@@ -1,0 +1,11 @@
+{
+  "demo_title": "Demo",
+  "demo_title_long": "Caesar-Verschlüsselung demo",
+  "demo_form_input": "Eingang",
+  "demo_form_output": "Ausgabe",
+  "demo_form_offset": "Versatz",
+  "demo_form_charset": "Zeichensatz",
+  "demo_options": "Einstellungen",
+  "demo_source_code": "Quellcode",
+  "demo_authors": "Anna Łukawska und Krzysztof Zdulski"
+}

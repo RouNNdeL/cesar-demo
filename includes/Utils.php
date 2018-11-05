@@ -36,8 +36,8 @@ class Utils
      */
     private static $instance;
     const DEFAULT_LANG = "en";
-    const AVAILABLE_LANGUAGES = ["en", "pl"];
-    const LANGUAGE_NATIVE_NAMES = ["English", "Polski"];
+    const AVAILABLE_LANGUAGES = ["en", "pl", "de"];
+    const LANGUAGE_NATIVE_NAMES = ["English", "Polski", "Deutsch"];
 
     public $strings;
     public $lang;
