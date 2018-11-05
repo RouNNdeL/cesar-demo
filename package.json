@@ -29,10 +29,10 @@
     "grunt-sass": "^3.0.2",
     "grunt-sass-lint": "^0.2.4",
     "jshint": "^2.9.6",
-    "node-sass": "^4.9.4"
+    "node-sass": "^4.10.0"
   },
   "scripts": {
     "build": "grunt vendor && grunt",
-    "test": "mocha --require @babel/register"
+    "test": "grunt lint && mocha --require @babel/register"
   }
 }

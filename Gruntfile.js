@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     const dist_js = "dist/js";
     const dist_css = "dist/css";
     const src_js = "src/js";
-    const src_sass = 'src/sass';
+    const src_sass = "src/sass";
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         clean: {
@@ -342,4 +342,5 @@ module.exports = function(grunt) {
     ]);
     grunt.registerTask('css', ['jsonlint', 'clean:css', 'csscomb', 'sasslint', 'sass:build']);
     grunt.registerTask('js', ['jsonlint', 'clean:js', 'jshint', 'browserify:build', 'uglify:build']);
+    grunt.registerTask('lint', ['jsonlint', 'jshint', 'sasslint']);
 };
