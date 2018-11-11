@@ -3,7 +3,6 @@
 import argparse
 import os.path
 import re
-import operator
 import codecs
 from math import sqrt
 
@@ -21,11 +20,13 @@ CHARSETS = {
     "pl": {
         "name": "Polish",
         "charset": "aąbcćdeęfghijklłmnńoóprsśtuwyzźż",
-        "frequency": {"a": 0.10503, "b": 0.0174, "c": 0.03895, "d": 0.03725, "e": 0.07352, "f": 0.00143, "g": 0.01731,
-                      "h": 0.01015, "i": 0.08328, "j": 0.01836, "k": 0.02753, "l": 0.02564, "m": 0.02515, "n": 0.06237,
-                      "o": 0.06667, "p": 0.02445, "r": 0.05243, "s": 0.05224, "t": 0.02475, "u": 0.02062, "w": 0.05813,
-                      "y": 0.03206, "z": 0.04852, "ą": 0.00699, "ć": 0.00743, "ę": 0.01035, "ł": 0.02109, "ń": 0.00362,
-                      "ó": 0.01141, "ś": 0.00814, "ź": 0.00078, "ż": 0.00706, }
+        "frequency": {
+            "a": 0.10503, "b": 0.0174, "c": 0.03895, "d": 0.03725, "e": 0.07352, "f": 0.00143, "g": 0.01731,
+            "h": 0.01015, "i": 0.08328, "j": 0.01836, "k": 0.02753, "l": 0.02564, "m": 0.02515, "n": 0.06237,
+            "o": 0.06667, "p": 0.02445, "r": 0.05243, "s": 0.05224, "t": 0.02475, "u": 0.02062, "w": 0.05813,
+            "y": 0.03206, "z": 0.04852, "ą": 0.00699, "ć": 0.00743, "ę": 0.01035, "ł": 0.02109, "ń": 0.00362,
+            "ó": 0.01141, "ś": 0.00814, "ź": 0.00078, "ż": 0.00706
+        }
     }
 }
 
@@ -44,8 +45,8 @@ def parse_args():
                         help="expected language of the file [en, pl]")
     parser.add_argument("-o", "--output", dest="output", action="store", metavar="FILE",
                         help="save the most probable option to a file")
-    parser.add_argument("file", action="store",
-                        help="file to process", type=lambda x: is_valid_file(parser, x))
+    parser.add_argument("-a", "-all", action="store_true", dest="all", help="print out all analysis results")
+    parser.add_argument("file", action="store", help="file to process", type=lambda x: is_valid_file(parser, x))
 
     a = parser.parse_args()
     if a.language not in CHARSETS:
@@ -99,8 +100,8 @@ if __name__ == '__main__':
         ratio = char_ratio(cipher(string, -i, charset["charset"]))
         errors[i] = calculate_error(ratio, charset["frequency"])
 
-    mn = min(errors.items(), key=operator.itemgetter(1))[1]
-    mx = max(errors.items(), key=operator.itemgetter(1))[1] - mn
+    mn = min(errors.items(), key=lambda x: x[1])[1]
+    mx = max(errors.items(), key=lambda x: x[1])[1] - mn
 
     scale = 1 / mx
     errors.update((x, 1 - (y - mn) * scale) for x, y in errors.items())
@@ -108,11 +109,11 @@ if __name__ == '__main__':
 
     print("Analysis complete")
     print("The most probable offset used to encode this text in %s was %d\n" % (charset["name"], sort[0][0]))
-    for i in range(min(len(sort), 10)):
-        print("%d: %f" % (sort[i][0], sort[i][1]))
+    for i in range(len(sort) if args.all else min(len(sort), 10)):
+        print("%d: %f" % (sort[i][0], sort[i][1] * 10))
     more = len(sort) - 10
-    if more > 0:
-        print("\nAnd %d more..." % more)
+    if more > 0 and not args.all:
+        print("\n%d items have not been displayed. Use the -a flag to show all" % more)
 
     if "output" in args:
         file = codecs.open(args.output, "w", "utf-8")
