@@ -107,7 +107,7 @@ HTML;
             <label for="code-offset"><?php echo Utils::getString("demo_form_offset") ?></label>
             <input id="code-offset" class="form-control" type="number" min="0"
                    value="<?php try {
-                       echo random_int(1, 10);
+                       echo random_int(1, 13);
                    }
                    catch(Exception $e) {
                        echo 1;
@@ -115,7 +115,7 @@ HTML;
         </div>
         <div class="col col-6 col-lg-9 pl-1">
             <label for="code-charset"><?php echo Utils::getString("demo_form_charset") ?></label>
-            <input id="code-charset" class="form-control" type="text" value="abcdefghijklmnopqrstuvwxyz">
+            <input id="code-charset" class="form-control" type="text" value="<?php echo Utils::getString("demo_lang_charset")?>">
         </div>
     </div>
     <div class="row mt-3">
@@ -185,7 +185,7 @@ HTML;
                 <div class="row pr-2">
                     <?php
                     foreach(Utils::AVAILABLE_LANGUAGES as $lang) {
-                        echo  <<<HTML
+                        echo <<<HTML
                     <div class="col col-auto text-center px-1">
                         <img class="flag footer" src="/$lang.png" data-lang-id="$lang">
                     </div>

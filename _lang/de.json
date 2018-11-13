@@ -7,5 +7,6 @@
   "demo_form_charset": "Zeichensatz",
   "demo_options": "Einstellungen",
   "demo_source_code": "Quellcode",
-  "demo_authors": "Anna Łukawska und Krzysztof Zdulski"
+  "demo_authors": "Anna Łukawska und Krzysztof Zdulski",
+  "demo_lang_charset": "abcdefghijklmnopqrstuvwxyzäöüß"
 }
